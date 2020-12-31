@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <title>Text to Speech</title>
+  </head>
+  <body class="container mt-5 bg-dark">
+    <h1 class="text-light">Text to Speech</h1>
+    <p class="lead text-light mt-5">Select Voice</p>
+    <select id="voices" class="form-select bg-secondary text-light" onchange="updateVoice()"></select>
+    <textarea class="form-control bg-dark text-light mt-5" cols="30" rows="10" placeholder="Type here..."></textarea>
+    <button id="talk" class="btn btn-success mt-5">Speak Now!</button>
+    <button id="pause" class="btn btn-warning mt-5">Pause</button>
+    <button id="resume" class="btn btn-info mt-5">Resume</button>
+    <button id="cancel" class="btn btn-danger mt-5">Cancel</button>
+  </body>
+  <script src="index.js"></script>
+</html>
