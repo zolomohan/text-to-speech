@@ -13,23 +13,23 @@ window.speechSynthesis.onvoiceschanged = () => {
   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
 };
 
-function updateVoice() {
+document.querySelector("#voices").addEventListener("change", () => {
   speech.voice = voices[document.querySelector("#voices").value];
-}
+});
 
-document.querySelector('#talk').addEventListener('click', () => {
+document.querySelector("#talk").addEventListener("click", () => {
   speech.text = document.querySelector("textarea").value;
   window.speechSynthesis.speak(speech);
 });
 
-document.querySelector('#pause').addEventListener('click', () => {
+document.querySelector("#pause").addEventListener("click", () => {
   window.speechSynthesis.pause();
 });
 
-document.querySelector('#resume').addEventListener('click', () => {
+document.querySelector("#resume").addEventListener("click", () => {
   window.speechSynthesis.resume();
 });
 
-document.querySelector('#cancel').addEventListener('click', () => {
+document.querySelector("#cancel").addEventListener("click", () => {
   window.speechSynthesis.cancel();
 });
