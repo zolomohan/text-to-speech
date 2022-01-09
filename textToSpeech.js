@@ -4,11 +4,11 @@ let speech = new SpeechSynthesisUtterance();
 // Set speech Language
 speech.lang = "en";
 
- // global array of available voices
+// global array of available voices
 let voices = [];
 
-window.speechSynthesis.onvoiceschanged = () => {
-  voices = window.speechSynthesis.getVoices();
+speechSynthesis.onvoiceschanged = () => {
+  voices = speechSynthesis.getVoices();
   speech.voice = voices[0];
   let voiceSelect = document.querySelector("#voices");
   voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
@@ -57,20 +57,20 @@ document.querySelector("#start").addEventListener("click", () => {
   speech.text = document.querySelector("textarea").value;
 
   // Start Speaking
-  window.speechSynthesis.speak(speech);
+  speechSynthesis.speak(speech);
 });
 
 document.querySelector("#pause").addEventListener("click", () => {
   // Pause the speechSynthesis instance
-  window.speechSynthesis.pause();
+  speechSynthesis.pause();
 });
 
 document.querySelector("#resume").addEventListener("click", () => {
   // Resume the paused speechSynthesis instance
-  window.speechSynthesis.resume();
+  speechSynthesis.resume();
 });
 
 document.querySelector("#cancel").addEventListener("click", () => {
   // Cancel the speechSynthesis instance
-  window.speechSynthesis.cancel();
+  speechSynthesis.cancel();
 });
