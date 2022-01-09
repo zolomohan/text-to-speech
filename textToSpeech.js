@@ -18,10 +18,18 @@ function populateVoiceList() {
   // Initially set the First Voice in the Array.
   speech.voice = voices[0];
 
-  // Set the Voice Select List. (Set the Index as the value, which we'll use later when the user updates the Voice using the Select Menu.)
   let voiceSelect = document.querySelector("#voices");
-  voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
-};
+
+  voices.forEach((voice, i) => {
+    let option = document.createElement("option");
+    option.textContent = voices[i].name + " (" + voices[i].lang + ")";
+
+    // Set the Index as the value, which we'll use later when the user updates the Voice using the Select Menu.
+    option.setAttribute("value", i);
+
+    voiceSelect.appendChild(option);
+  })
+}
 
 // If the Browser supports speechSynthesis populate Voice List
 if (typeof speechSynthesis !== "undefined") {
