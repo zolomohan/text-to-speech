@@ -15,6 +15,15 @@ function populateVoiceList() {
   // Get list of voices
   voices = speechSynthesis.getVoices();
 
+  // Sort the list alphabetically
+  voices.sort((a, b) => {
+    let fa = a.name.toLowerCase(),
+        fb = b.name.toLowerCase();
+    if (fa < fb) { return -1; }
+    if (fa > fb) { return 1; }
+    return 0;
+  });
+
   // Initially set the First Voice in the Array.
   speech.voice = voices[0];
 
