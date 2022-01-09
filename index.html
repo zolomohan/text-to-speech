@@ -1,38 +1,50 @@
 <html lang="en">
-  <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Text to Speech</title>
-  </head>
-  <body class="container mt-5 bg-dark">
-    <h1 class="text-light">Text to Speech</h1>
-    <p class="lead text-light mt-4">Select Voice</p>
-    <select id="voices" class="form-select bg-secondary text-light"></select>
-    <div class="d-flex mt-4 text-light">
-      <div>
-        <p class="lead">Volume</p>
-        <input type="range" min="0" max="1" value="1" step="0.1" id="volume" />
-        <span id="volume-label" class="ms-2">1</span>
-      </div>
-      <div class="mx-5">
-        <p class="lead">Rate</p>
-        <input type="range" min="0.1" max="10" value="1" id="rate" step="0.1" />
-        <span id="rate-label" class="ms-2">1</span>
-      </div>
-      <div>
-        <p class="lead">Pitch</p>
-        <input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
-        <span id="pitch-label" class="ms-2">1</span>
-      </div>
+
+<head>
+  <title>Text to Speech</title>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="container mt-5 bg-dark">
+  <h1 class="text-light">Text to Speech</h1>
+  <p class="lead text-light mt-4">Select Voice</p>
+  <select id="voices" class="form-select bg-secondary text-light"></select>
+  <div class="d-flex mt-4 text-light">
+    <div>
+      <p class="lead">Volume</p>
+      <input type="range" min="0.1" max="1" value="1" step="0.1" id="volume" />
+      <span id="volume-label" class="ms-2">1</span>
     </div>
-    <textarea class="form-control bg-dark text-light mt-5" cols="30" rows="10" placeholder="Type here..."></textarea>
-    <div class="mb-5">
-      <button id="start" class="btn btn-success mt-5 me-3">Start</button>
-      <button id="pause" class="btn btn-warning mt-5 me-3">Pause</button>
-      <button id="resume" class="btn btn-info mt-5 me-3">Resume</button>
-      <button id="cancel" class="btn btn-danger mt-5 me-3">Cancel</button>
+    <div class="mx-5">
+      <p class="lead">Rate</p>
+      <input type="range" min="0.1" max="10" value="1" id="rate" step="0.1" />
+      <span id="rate-label" class="ms-2">1</span>
     </div>
-  </body>
-  <!-- script tag goes here -->
-  <script src="./textToSpeech.js"></script>
+    <div>
+      <p class="lead">Pitch</p>
+      <input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
+      <span id="pitch-label" class="ms-2">1</span>
+    </div>
+  </div>
+  <textarea class="form-control bg-dark text-light mt-5" cols="30" rows="10" placeholder="Type here..."></textarea>
+  <div class="mb-5">
+    <button id="start" class="btn btn-success mt-5 me-3">Start</button>
+    <button id="pause" class="btn btn-warning mt-5 me-3">Pause</button>
+    <button id="resume" class="btn btn-info mt-5 me-3">Resume</button>
+    <button id="cancel" class="btn btn-danger mt-5 me-3">Cancel</button>
+  </div>
+  <div class="position-absolute top-0 end-0">
+    <a class="btn btn-primary" href="https://github.com/zolomohan/text-to-speech/"><span>View on
+        GitHub </span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+        <path
+          d="M8 0a8 8 0 0 0-2.5 15.6c.4 0 .5-.2.5-.4v-1.5c-2 .4-2.5-.5-2.7-1 0-.1-.5-.9-.8-1-.3-.2-.7-.6 0-.6.6 0 1 .6 1.2.8.7 1.2 1.9 1 2.4.7 0-.5.2-.9.5-1-1.8-.3-3.7-1-3.7-4 0-.9.3-1.6.8-2.2 0-.2-.3-1 .1-2 0 0 .7-.3 2.2.7a7.4 7.4 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 2 .1 2.1.5.6.8 1.3.8 2.2 0 3-1.9 3.7-3.6 4 .3.2.5.7.5 1.4v2.2c0 .2.1.5.5.4A8 8 0 0 0 16 8a8 8 0 0 0-8-8z" />
+      </svg>
+    </a>
+  </div>
+</body>
+<!-- script tag goes here -->
+<script src="./textToSpeech.js"></script>
+
 </html>
